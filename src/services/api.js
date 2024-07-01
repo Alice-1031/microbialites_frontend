@@ -1,6 +1,10 @@
 // src/services/api.js
 const baseURL = 'http://localhost:3000'; // Adjust if your backend URL is different
 
+/**
+ * calls addProperty API
+ */
+
 export const addProperty = async (propertyData) => {
     try {
         const response = await fetch(`${baseURL}/properties/add`, {
