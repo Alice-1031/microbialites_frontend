@@ -7,6 +7,8 @@ const PropertyForm = () => {
   const [lookupTables, setLookupTables] = useState([]);
   const [selectedLookupTable, setSelectedLookupTable] = useState(null);
   const [selectedStructureType, setSelectedStructureType] = useState(null);
+  const [createNewLookup, setCreateNewLookup] = useState(false);
+
   const [formData, setFormData] = useState({
     propertyName: '',
     displayName: '',
@@ -136,17 +138,20 @@ const PropertyForm = () => {
         </div>
         <div className="mb-3">
           <label className="form-check-label">
-            <input name="createNewLookupTable" type="checkbox" checked={!!formData.newLookupTableName} onChange={() => {
-              setFormData(prev => ({ ...prev, newLookupTableName: prev.newLookupTableName ? '' : 'New Table' }));
+            <input name="createNewLookupTable" type="checkbox" checked={createNewLookup} onChange={() => {
+               setCreateNewLookup(!createNewLookup);
+               setFormData(prev => ({
+                 ...prev,
+                 newLookupTableName: !createNewLookup ? '' : null }));
             }} className="form-check-input" />
             Create New Lookup Table
           </label>
         </div>
-        {!!formData.newLookupTableName && (
+        {createNewLookup && (
           <>
             <div className="mb-3">
               <label className="form-label">New Lookup Table Name:</label>
-              <input name="newLookupTableName" value={formData.newLookupTableName} onChange={handleChange} className="form-control" />
+              <input name="newLookupTableName" value={formData.newLookupTableName || ''} onChange={handleChange} className="form-control" />
             </div>
             {formData.initialData.map((item, index) => (
               <div key={index} className="mb-3">

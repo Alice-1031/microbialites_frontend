@@ -1,0 +1,27 @@
+.alter-schema {
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+}
+
+.tabs button.active {
+    background: #fff;
+    border-bottom: 2px solid #000;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+}

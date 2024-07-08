@@ -1,28 +1,20 @@
 // src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './components/About';
-import Explore from './components/Explore';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
-import PropertyForm from './components/PropertyForm';
+import ExploreBySize from './components/ExploreBySize';
+import ExploreByLocation from './components/ExploreByLocation';
+import AlterSchema from './components/AlterSchema';
 
-
-/*function App() {
-  return (
-    <div className="App">
-      <PropertyForm />
-    </div>
-  );
-}*/
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/alter-schema" element={<PropertyForm />} />
+        <Route path="/explore-by-size" element={<ExploreBySize />} />
+        <Route path="/explore-by-location" element={<ExploreByLocation />} />
+        <Route path="/alter-schema" element={<AlterSchema />} />
       </Routes>
     </Router>
   );

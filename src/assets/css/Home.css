@@ -1,0 +1,91 @@
+.home {
+    text-align: center; /* Center the text */
+    padding: 0px;
+}
+
+.home h1 {
+    font-size: 4.5rem;  /* Larger font size for the main header */
+    color: #fff;        /* Assuming white text works well on your background */
+    text-align: center; /* Center-align the text */
+    margin-top: 100px;   /* Add some top margin for spacing */
+    font-weight: 500;  /* Bold font weight */
+}
+
+.home p {
+    font-size: 3.5rem;  /* Larger than normal text size for the paragraph */
+    color: #fff;        /* Light grey color for paragraph to differentiate from h1 */
+    text-align: center; /* Center-align the text */
+    margin-top: 10px;   /* Space below the h1 */
+    font-weight: 400;/* Regular font weight */
+}
+
+
+
+.explore-section {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/back.jpeg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Text color */
+    height: 100vh;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .explore-button {
+    background-color: rgba(255, 255, 255, 0.6); /* Translucent white */
+    color: #000; /* Black text color */
+    text-wrap: wrap;
+    padding: 15px 30px; /* Adjust padding to increase the clickable area and visual size */
+    text-decoration: none; /* Remove underline */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size as needed */
+    text-align: center; /* Center text */
+    display: block; /* Make the link fill the container */
+    width: 100%; /* Adjust width as needed */
+}
+
+.explore-button:hover {
+    color: rgb(99, 133, 212); /* Blue text on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+  
+  .explore-options {
+    display: flex;
+    justify-content: center; /* Align the boxes horizontally */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 30px; /* Space between the two boxes */
+    margin-top: 30px;
+  }
+  
+  .explore-option {
+    width: 30%; /* Adjust width as needed */
+   
+    min-width: 100px; /* Prevent boxes from becoming too small */
+    margin: 10px; /* Adds some margin around each button */
+    text-align: center; /* Center-align the text inside the container */
+  }
+  
+
+  
+
+
+  @media (max-width: 768px) {
+    .explore-options {
+        flex-direction: column; /* Stack options vertically on smaller screens */
+    }
+    .explore-option {
+        width: 100%; /* Take full width on smaller screens */
+        margin: 10px 0; /* Adjust margin for better vertical stacking */
+    }
+
+    .explore-button {
+        padding: 12px 20px; /* Slightly smaller padding on smaller screens */
+    }
+}
+
+

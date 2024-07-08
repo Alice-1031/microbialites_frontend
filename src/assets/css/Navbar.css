@@ -1,0 +1,45 @@
+.navbar {
+   
+    position: relative;
+    min-height: 50px;
+    border: 1px transparent;
+    background-color: #e2dfdf;
+    color: black;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end; /* Aligns flex lines at the end of the container */
+    margin-bottom: 0 !important; 
+   
+   
+}
+
+.menu-icons {
+    display: flex;
+   
+}
+
+
+.menu-icons a {
+    font-weight: 500; /* Bold font for visibility */
+    color: black; /* Ensures text is black */
+    text-decoration: none; /* No underline */
+    margin: 0 30px;
+    font-size: 18px;
+}
+
+.menu-icons a:hover {
+    color: rgb(99, 133, 212); /* Blue text on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+@media (max-width: 600px) {
+    .menu-icons a {
+        margin: 0 10px; /* Smaller margins for smaller screens */
+    }
+    .navbar {
+        justify-content: space-between; /* Adjust alignment for mobile devices */
+    }
+}
