@@ -1,6 +1,6 @@
 // src/services/api.js
 import axios from 'axios';
-const baseURL = 'http://localhost:3000'; // Adjust if your backend URL is different
+const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:3000'; // Adjust if your backend URL is different
 
 /**
  * calls addProperty API from PropertyController

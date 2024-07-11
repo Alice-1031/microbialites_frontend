@@ -24,7 +24,7 @@
 .explore-section {
     display: flex;
     flex-direction: column;
-    background-image: url('../images/back.jpeg'); /* Background image */
+    background-image: url('../images/website.png'); /* Background image */
     background-size: cover;
     background-position: center;
     color: white; /* Text color */
@@ -49,7 +49,7 @@
 }
 
 .explore-button:hover {
-    color: rgb(99, 133, 212); /* Blue text on hover */
+    color: rgb(22, 132, 235); /* Blue text on hover */
     text-decoration: none; /* No underline on hover */
 }
 
@@ -72,8 +72,6 @@
   
 
   
-
-
   @media (max-width: 768px) {
     .explore-options {
         flex-direction: column; /* Stack options vertically on smaller screens */
