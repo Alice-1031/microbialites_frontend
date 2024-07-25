@@ -3,15 +3,22 @@ import axios from 'axios';
 const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:3000'; // Adjust if your backend URL is different
 
 /**
+ * Utility function to get the token from localStorage
+ */
+const getToken = () => localStorage.getItem('token');
+
+/**
  * calls addProperty API from PropertyController
  */
 
 export const addProperty = async (propertyData) => {
     try {
+        const token = getToken(); 
         const response = await fetch(`${baseURL}/properties/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` // Add the Bearer prefix
             },
             body: JSON.stringify(propertyData)
         });
@@ -29,10 +36,12 @@ export const addProperty = async (propertyData) => {
 
 export const deleteProperty = async (propertyData) => {
     try {
+        const token = getToken();
         const response = await fetch(`${baseURL}/properties/delete`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` // Add the Bearer prefix
             },
             body: JSON.stringify(propertyData)
         });
