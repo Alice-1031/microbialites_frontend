@@ -1,23 +1,30 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getDecodedToken, hasRole } from './middleware/authUtils';
 import LoginModal from './loginModal';
 import '../assets/css/Navbar.css';
 
 function Navbar() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [roles, setRoles] = useState([]);
     const [showLoginModal, setShowLoginModal] = useState(false);
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        if (token) {
+        const decodedToken = getDecodedToken();
+        if (decodedToken) {
             setIsAuthenticated(true);
+            setRoles(decodedToken.roles || []);
         }
     }, []);
 
     const handleLoginSuccess = () => {
         console.log("Login successful");
-        setIsAuthenticated(true);
+        const decodedToken = getDecodedToken();
+        if (decodedToken) {
+            setIsAuthenticated(true);
+            setRoles(decodedToken.roles || []);
+        }
         setShowLoginModal(false);  // Close the modal on successful login
     };
 
@@ -25,6 +32,7 @@ function Navbar() {
         console.log("Logging out");
         localStorage.removeItem('token');
         setIsAuthenticated(false);  // Reset authentication status
+        setRoles([]);
     };
 
     const toggleLoginModal = () => {
@@ -44,7 +52,7 @@ function Navbar() {
                     <Link to="/api">API</Link>
                     {isAuthenticated ? (
                         <>
-                            <Link to="/alter-schema">Alter Schema</Link>
+                            {hasRole(roles, 'Admin') && <Link to="/alter-schema">Alter Schema</Link>}
                             <button onClick={handleLogout}>Logout</button>
                         </>
                     ) : (
