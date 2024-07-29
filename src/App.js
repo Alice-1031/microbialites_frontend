@@ -5,6 +5,7 @@ import Home from './components/Home';
 import ExploreBySize from './components/ExploreBySize';
 import ExploreByLocation from './components/ExploreByLocation';
 import AlterSchema from './components/AlterSchema';
+import About from './components/About';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Route path="/explore-by-size" element={<ExploreBySize />} />
         <Route path="/explore-by-location" element={<ExploreByLocation />} />
         <Route path="/alter-schema" element={<AlterSchema />} />
+        <Route path="/about" element={<About />} />
+        
       </Routes>
     </Router>
   );

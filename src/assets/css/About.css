@@ -1,0 +1,21 @@
+.about {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .about p, .about ul {
+    margin-bottom: 16px;
+  }
+  
+  .about a {
+    color: #0645AD;
+    text-decoration: none;
+  }
+  
+  .about a:hover {
+    text-decoration: underline;
+  }
+  

@@ -79,7 +79,25 @@ export const fetchLookupTables = async () => {
         console.error('Failed to fetch waypoints:', error);
         throw error;
     }
-};  
+};
+
+export const fetchFilteredWaypoints = async (queryString) => {
+    console.log("Query String:", queryString); // Log the query string for debugging
+    const url = new URL(`${baseURL}/waypoints/filter?${queryString}`);
+    console.log("API URL:", url.toString()); // Log the full API URL
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP status ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Failed to fetch filtered waypoints:', error);
+        throw error;
+    }
+};
+
 
 export const handleLogin = async (username,password) => {
     try {
