@@ -3,34 +3,36 @@ import {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import MapComponent from './WayptMap';
 import { fetchAllWaypoints } from '../services/api';
-import { fetchFilteredWaypoints } from '../services/api';
+import { fetchFilteredWaypoints,fetchPeriodNames } from '../services/api';
+import '../assets/css/exploreLocation.css'
 
 function ExploreByLocation() {
 
     const [waypoints, setWaypoints] = useState([]);
     const [types, setTypes] = useState([]);
-    const [ageRange, setAgeRange] = useState({ min: 0, max: 2147483647 });
+    const [periodName, setPeriodName] = useState('');
 
     // Load all waypoints initially
     useEffect(() => {
       fetchAllWaypoints()
           .then(data => setWaypoints(data))
           .catch(error => console.error('Failed to fetch all waypoints:', error));
+
   }, []);
 
       // Update waypoints based on filters
       useEffect(() => {
         const typeString = Array.isArray(types) && types.length > 0 ? types.join(',') : '';
         console.log("Filtered types:", types);
-        console.log("Age Range:", ageRange);
+        console.log("Period Name:", periodName);
 
-        const params = new URLSearchParams({
-            minAge: ageRange.min,
-            maxAge: ageRange.max
-        });
+        const params = new URLSearchParams();
 
         if (typeString) {
             params.append('types', typeString);
+        }
+        if (periodName) {
+            params.append('period_name', periodName);
         }
 
         fetchFilteredWaypoints(params.toString())
@@ -39,7 +41,7 @@ function ExploreByLocation() {
                 setWaypoints(data);
             })
             .catch(error => console.error('Failed to fetch filtered waypoints:', error));
-    }, [types, ageRange]);
+    }, [types, periodName]);
 
     const handleTypeChange = (typeId) => {
         setTypes(prev => {
@@ -47,17 +49,19 @@ function ExploreByLocation() {
             console.log("Updated types:", newTypes);
             return newTypes;
         });
-  };
+    };
+
+    const handlePeriodNameChange = (e) => {
+        setPeriodName(e.target.value);
+    };
 
   return (
       <div>
       <Navbar />
       <h1>Explore by Location</h1>
       <div>
-          <label>Min Age: </label>
-          <input type="number" value={ageRange.min} onChange={e => setAgeRange({ ...ageRange, min: Number(e.target.value) })} />
-          <label>Max Age: </label>
-          <input type="number" value={ageRange.max} onChange={e => setAgeRange({ ...ageRange, max: Number(e.target.value) })} />
+      <label>Period Name: </label>
+        <input type="text" value={periodName} onChange={handlePeriodNameChange} placeholder="Enter period name..." /> 
       </div>
       <div>
           <label><input type="checkbox" onChange={() => handleTypeChange(1)} checked={types.includes(1)} /> Stromatolite</label>

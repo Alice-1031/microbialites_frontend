@@ -119,3 +119,18 @@ export const handleLogin = async (username,password) => {
     }
 };
 
+export const fetchPeriodNames = async () => {
+    const url = new URL(`${baseURL}/period-names`);
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP status ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Failed to fetch period names:', error);
+        throw error;
+    }
+};
+
+
