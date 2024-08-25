@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     display: flex;
-    justify-content: flex-end; /* Aligns flex lines at the end of the container */
+    justify-content: flex-start; /* Aligns flex lines at the end of the container */
     margin-bottom: 0 !important; 
    
    
@@ -21,22 +21,33 @@
    
 }
 
+.menu-icons a, .menu-icons button {
+    padding: 0.5rem 2rem; /* Equivalent to py-2 px-4 */
+    margin: 0.5rem; /* Equivalent to mx-2 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    transition: background-color 0.3s ease; /* Equivalent to transition duration-300 */
 
-.menu-icons a {
-    font-weight: 500; /* Bold font for visibility */
-    color: black; /* Ensures text is black */
-    text-decoration: none; /* No underline */
-    margin: 0 30px;
-    font-size: 18px;
+    /* Button text styling */
+  font-size: 1.5em; /* 50% larger text */
+  color: black;     /* Black text color */
+  text-decoration: none; /* Remove underline */
 }
 
-.menu-icons a:hover {
-    color: rgb(99, 133, 212); /* Blue text on hover */
-    text-decoration: none; /* No underline on hover */
+.menu-icons button {
+    /* Remove border and set background to transparent */
+    border: none;
+    background-color: transparent; 
+  }
+
+.menu-icons a:hover, .menu-icons button:hover {
+    background-color: #bbb; /* Equivalent to hover:bg-gray-300 */
+
+    color: inherit; /* Keep the original text color */
+  text-decoration: none; /* Ensure no underline */
 }
 
 @media (max-width: 600px) {
-    .menu-icons a {
+    .menu-icons a, .menu-icons button {
         margin: 0 10px; /* Smaller margins for smaller screens */
     }
     .navbar {

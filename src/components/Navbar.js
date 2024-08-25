@@ -35,6 +35,10 @@ function Navbar() {
         setRoles([]);
     };
 
+    const handleLoginCancel = () => {
+        setShowLoginModal(false);
+    }
+
     const toggleLoginModal = () => {
         console.log("Toggling login modal");
         setShowLoginModal(!showLoginModal);
@@ -60,7 +64,7 @@ function Navbar() {
                     )}
                 </div>
             </div>
-            {showLoginModal && <LoginModal onLoginSuccess={handleLoginSuccess} />}
+            {showLoginModal && <LoginModal onLoginSuccess={handleLoginSuccess} onLoginCancel={handleLoginCancel} />}
 
         </nav>
     );
