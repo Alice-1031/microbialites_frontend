@@ -3,7 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 
-const MapComponent = ({ waypoints }) => {
+const MapComponent = ({ waypoints,onWaypointClick }) => {
     const mapRef = useRef(null);
 
     useEffect(() => {
@@ -29,12 +29,18 @@ const MapComponent = ({ waypoints }) => {
 
         // Add new markers for each waypoint
         waypoints.forEach(waypoint => {
-            L.marker([waypoint.lat, waypoint.long], { icon: customIcon })
+            const marker = L.marker([waypoint.lat, waypoint.long], { icon: customIcon })
                 .bindPopup(`<b>${waypoint.wayptname}</b><br/>${waypoint.sitename}`)
                 .addTo(mapRef.current);
+
+             // Add click event listener to marker
+             marker.on('click', () => {
+                onWaypointClick(waypoint.megas, waypoint.wayptid);
+            });
+            
         });
 
-    }, [waypoints]); // Re-run effect if waypoints change
+    }, [waypoints,onWaypointClick]); // Re-run effect if waypoints change
 
     return <div id="map" style={{ height: '500px', width: '100%' }}></div>;
 };

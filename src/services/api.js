@@ -134,3 +134,24 @@ export const fetchPeriodNames = async () => {
 };
 
 
+// Fetch megas at a specific waypoint
+export const fetchMegasAtWaypoint = async (waypointId) => {
+    try {
+        const response = await axios.get(`${baseURL}/waypoints/${waypointId}/megas`);
+        return response.data; // Assuming the response data structure matches what you expect
+    } catch (error) {
+        console.error('Failed to fetch megas:', error.response?.data?.message || error.message);
+        throw error;
+    }
+};
+
+// Fetch thumbnail URLs for a list of megas
+export const fetchMegaThumbnails = async (megaIds) => {
+    try {
+        const response = await axios.post(`${baseURL}/megas/thumbnails`, { megaIds });
+        return response.data; // Assuming the response data structure matches what you expect
+    } catch (error) {
+        console.error('Failed to fetch thumbnails:', error.response?.data?.message || error.message);
+        throw error;
+    }
+};
