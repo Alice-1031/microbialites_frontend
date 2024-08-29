@@ -1,0 +1,112 @@
+.logo {
+    position: relative;
+  }
+  
+  .logoWrapper {
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .navItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .navItem3 {
+    position: relative;
+    text-decoration: underline;
+  }
+  
+  .aboutChild {
+    position: absolute;
+    top: 1148px;
+    left: 450px;
+    width: 703px;
+    height: 52px;
+  }
+  
+  .casLockup1lineRgb1Icon {
+    position: absolute;
+    top: 1123px;
+    left: 10px;
+    width: 510px;
+    height: 38px;
+    object-fit: cover;
+  }
+  
+  .gswalogo1Icon {
+    position: absolute;
+    top: 1098px;
+    left: 606px;
+    width: 343px;
+    height: 96px;
+    object-fit: cover;
+  }
+  
+  .aboutItem {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background-color: #d9d9d9;
+    width: 100%;
+    height: 100vh;
+    cursor: pointer;
+  }
+  
+  .body {
+    position: relative;
+    top: -10%;
+    left: 0%;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .headerbar1Icon {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 620px;
+    height: 75px;
+    object-fit: cover;
+    margin-top: 0; /* Remove margin */
+  }
+  
+  .title {
+    position: absolute;
+    top: -275px;
+    left: 17px;
+    font-size: 40px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    width: 332px;
+    white-space: nowrap;
+  }
+  
+  .page {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 1200px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-family: Arial;
+    margin: 0; /* Ensure no margin on the top */
+    padding: 0; /* Ensure no padding on the top */
+  }
+  

@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 /* Modal Content styles */
@@ -38,7 +39,10 @@
   border-radius: .5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 662px; /* Adjust width as needed */
-  position: relative;
+  position: absolute; /* Position relative to the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, -200%); /* Center the modal */
 }
 
 .modal-content .mb-4 { /* Target the flex containers */
@@ -112,21 +116,22 @@
 }
 
 .submit-button {
-  background-color: #3182ce; /* Blue background */
+  background-color: #000000; /* Black background */
   margin-right: auto; /* Push the Login button to the left */
 }
 
 .submit-button:hover {
-  background-color: #2c5282; /* Darker blue on hover */
+  background-color: #333; /* Dark Gray on hover */
 }
 
 .cancel-button {
-  background-color: #dc2626; /* Red background */
+  background-color: #e8e8e8; /* Red background */
   margin-left: auto; /* Push the Cancel button to the right */
+  color: black;
 }
 
 .cancel-button:hover {
-  background-color: #991b1b; /* Darker red on hover */
+  background-color: #c8c8c8; /* Darker red on hover */
 }
 
 .submit-button:focus,

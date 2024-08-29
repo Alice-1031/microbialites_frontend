@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { handleLogin } from '../services/api';
 import '../assets/css/loginModal.css';
 import image1 from '../assets/images/headerbar 1.png';
-import Navbar from './Navbar';
 
 const LoginModal = ({ onLoginSuccess, onLoginCancel }) => {
   const [username, setUsername] = useState('');

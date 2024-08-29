@@ -6,6 +6,8 @@ import ExploreBySize from './components/ExploreBySize';
 import ExploreByLocation from './components/ExploreByLocation';
 import AlterSchema from './components/AlterSchema';
 import ProtectedRoute from './components/middleware/ProtectedRoute';
+import Page from './components/TextPageTemplate';
+
 
 
 
@@ -16,6 +18,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/explore-by-size" element={<ExploreBySize />} />
         <Route path="/explore-by-location" element={<ExploreByLocation />} />
+        <Route path="/api" element={<Page title={'API'} body={'API text'} />}/>
+        <Route path="/help" element={<Page title={'HOW TO USE THIS DATABASE'} body={'Tutorial text'} />}/>
+        <Route path="/about" element={<Page title={'ABOUT'} body={'About text'} />}/>
+        <Route path="/teaching" element={<Page title={'TEACHING'} body={'Teaching text'} />}/>
        <Route
           path="/alter-schema"
           element={<ProtectedRoute element={AlterSchema} requiredRoles={['Admin']} />}
