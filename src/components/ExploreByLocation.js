@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import MapComponent from './WayptMap';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar';
 import { fetchAllWaypoints } from '../services/api';
 import { fetchFilteredWaypoints, fetchMegaThumbnails,fetchMegasAtWaypoint} from '../services/api';
 
@@ -62,7 +62,7 @@ function ExploreByLocation() {
     };
 
     const handleWaypointClick = (megas, waypointId) => {
-        if (!megas || megas.length === 0) {
+        if (!megas || megas.length === 0) { // case where no filters are selected and API called is fetchAllWaypoints instead of fetchFilteredWaypoints
             // First, fetch megas for this waypoint from the backend
             fetchMegasAtWaypoint(waypointId)
                 .then(response => {
