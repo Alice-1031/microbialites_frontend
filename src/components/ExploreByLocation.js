@@ -2,7 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Navbar from './Navbar';
 import MapComponent from './WayptMap';
-import Sidebar from './sidebar';
+import Sidebar from './Sidebar';
 import { fetchAllWaypoints } from '../services/api';
 import { fetchFilteredWaypoints, fetchMegaThumbnails,fetchMegasAtWaypoint} from '../services/api';
 
