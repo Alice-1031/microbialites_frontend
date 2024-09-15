@@ -1,0 +1,141 @@
+/* Login button styles */
+.login-button {
+  background-color: #3182ce; /* Blue background */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  border-radius: 0.25rem;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.login-button:hover {
+  background-color: #2c5282; /* Darker blue on hover */
+}
+
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue outline on focus */
+}
+
+/* Modal Overlay styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content styles */
+.modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: .5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 662px; /* Adjust width as needed */
+  position: absolute; /* Position relative to the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, -200%); /* Center the modal */
+}
+
+.modal-content .mb-4 { /* Target the flex containers */
+  width: 100%;
+}
+
+.header-icon {
+  object-fit: cover;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.modal-content b {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: left;
+  position: absolute; /* Position the text absolutely */
+  top: -23%; /* Center vertically */
+  left: 60px; /* Align to the left */
+  transform: translateY(-50%); /* Adjust for the text's height */
+  transform: scale(200%);
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 25%;
+  width: auto;
+  text-align: left; 
+}
+
+.modal-content input {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  appearance: none;
+  border: 1px solid #e5e7eb; /* Light gray border */
+  border-radius: 0.25rem;
+  width: 50%;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.modal-content input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue outline on focus */
+}
+
+.modal-content .button-container {
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+}
+
+/* Submit & Cancel buttons styles */
+.submit-button,
+.cancel-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #000000; /* Black background */
+  margin-right: auto; /* Push the Login button to the left */
+}
+
+.submit-button:hover {
+  background-color: #333; /* Dark Gray on hover */
+}
+
+.cancel-button {
+  background-color: #e8e8e8; /* Red background */
+  margin-left: auto; /* Push the Cancel button to the right */
+  color: black;
+}
+
+.cancel-button:hover {
+  background-color: #c8c8c8; /* Darker red on hover */
+}
+
+.submit-button:focus,
+.cancel-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue outline on focus */
+}

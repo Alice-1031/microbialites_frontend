@@ -3,11 +3,11 @@
     padding: 0px;
 }
 
-.home h1 {
+.home h1, b {
     font-size: 4.5rem;  /* Larger font size for the main header */
     color: #fff;        /* Assuming white text works well on your background */
     text-align: center; /* Center-align the text */
-    margin-top: 100px;   /* Add some top margin for spacing */
+    margin-top: 15%;   /* Add some top margin for spacing */
     font-weight: 500;  /* Bold font weight */
 }
 
@@ -41,7 +41,7 @@
     text-decoration: none; /* Remove underline */
     border: none;
     cursor: pointer;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 25px; /* Rounded corners */
     font-size: 16px; /* Adjust font size as needed */
     text-align: center; /* Center text */
     display: block; /* Make the link fill the container */
@@ -49,7 +49,8 @@
 }
 
 .explore-button:hover {
-    color: rgb(22, 132, 235); /* Blue text on hover */
+    background-color: rgba(200, 200, 200, 0.6); /* Translucent gray */
+    color: #000;
     text-decoration: none; /* No underline on hover */
 }
 
