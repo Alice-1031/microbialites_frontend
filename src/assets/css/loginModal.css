@@ -36,13 +36,12 @@
 .modal-content {
   background-color: white;
   padding: 1.5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 662px; /* Adjust width as needed */
-  position: absolute; /* Position relative to the viewport */
-  top: 50%;
-  left: 50%;
-  transform: translate(-200%, -200%); /* Center the modal */
+  position: fixed;
+  z-index: 1001;
+  text-align: center; /* Ensures all content inside modal is centered */
 }
 
 .modal-content .mb-4 { /* Target the flex containers */
