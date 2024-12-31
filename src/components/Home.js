@@ -8,7 +8,7 @@ function Home() {
         <div className="home">
             <Navbar />
             <div className="explore-section">
-                <b>The Microbialite Database</b>
+                <b>The Microbialite Database!</b>
                 <p>Exploring the Evidence of the Earliest Forms of Life</p>
                 <div className="explore-options">
                     <div className="explore-option">

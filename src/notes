@@ -1,0 +1,16 @@
+"username" : "Shreya",
+    "password" : "CRQz9A1Uvhdm"
+
+    .env file
+    DB_USER=uas6b7hb4m3h8d
+DB_PASSWORD=p425d89faaa4cfedc5bcac765739bada4d7cfa1d1d52dfe18a018cb105d20fac5
+DB_HOST=cd3vj4tb0qabuf.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com
+DB_NAME=d6b440s665qi9s
+DB_PORT=5432
+JWT_SECRET=14cd3d233c014e1f75f0a69353304c5a70920445a747cf4e1666ef4f1b7c62e7bc60f67e7ca332901d6cd01a4bbc65866879019251dd56d9ddc8ca811a02533e
+CORS_ORIGIN=http://localhost:3001
+PORT=3000
+DATABASE_URL=postgres://uas6b7hb4m3h8d:p425d89faaa4cfedc5bcac765739bada4d7cfa1d1d52dfe18a018cb105d20fac5@cd3vj4tb0qabuf.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d6b440s665qi9s
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=microbialitesdb2024;AccountKey=pa/wWOnfLrJZFV0rfFQqXUU3CW+tShOcLCyoq+d4lTDZI8Z2WDAte1OyEpP8yoKC+HdWwUBxi8PN+AStISj1Bg==;EndpointSuffix=core.windows.net
+AZURE_STORAGE_ACCOUNT_NAME=microbialitesdb2024
+AZURE_STORAGE_ACCOUNT_KEY=pa/wWOnfLrJZFV0rfFQqXUU3CW+tShOcLCyoq+d4lTDZI8Z2WDAte1OyEpP8yoKC+HdWwUBxi8PN+AStISj1Bg==
